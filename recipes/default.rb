@@ -16,8 +16,9 @@ include_recipe 'packages::default'
 include_recipe 'dev-elk::elasticsearch_config'
 
 #logstash
-#include_recipe 'dev-elk::logstash_config'
+include_recipe 'dev-elk::logstash_config'
 
 #kibana4
+include_recipe 'nginx::default'
 #include_recipe 'dev-elk::kibana4_install'
 #include_recipe 'dev-elk::kibana4_config'

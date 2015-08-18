@@ -10,8 +10,7 @@
 #set service to start on boot and start it now. #sudo update-rc.d elasticsearch defaults 95 10
 
 service 'elasticsearch' do	
-  supports :restart => true, :reload => true
+  supports :status => true, :restart => true, :reload => true
   action [ :enable, :start ]
 end
-
 
