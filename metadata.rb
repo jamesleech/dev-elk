@@ -1,0 +1,11 @@
+name 'dev-elk'
+maintainer 'James Leech'
+maintainer_email 'james.leech@tattsgroup.com'
+license 'all_rights'
+description 'Installs/Configures dev-elk'
+long_description 'Installs/Configures dev-elk'
+version '0.1.11'
+
+depends 'apt'
+depends 'packages'
+depends 'java'
