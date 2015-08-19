@@ -10,15 +10,13 @@ include_recipe 'java::default'
 #update repos
 include_recipe 'dev-elk::add-repos'
 
-include_recipe 'packages::default'
-
-#elasticsearch
-include_recipe 'dev-elk::elasticsearch_config'
-
-#logstash
-include_recipe 'dev-elk::logstash_config'
-
-#kibana4
+#install
+include_recipe 'packages::default' #installed elasticsearch and logstash amoung other selected packages.
+include_recipe 'dev-elk::kibana4_install'
 include_recipe 'nginx::default'
-#include_recipe 'dev-elk::kibana4_install'
-#include_recipe 'dev-elk::kibana4_config'
+
+#config
+include_recipe 'dev-elk::elasticsearch_config'
+include_recipe 'dev-elk::logstash_config'
+include_recipe 'dev-elk::kibana4_config'
+include_recipe 'dev-elk::nginx_config'

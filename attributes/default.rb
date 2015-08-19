@@ -5,4 +5,4 @@
 default['java']['install_flavor'] = 'openjdk'
 default['java']['jdk_version'] = '7'
 
-node.default['packages'] = ['elasticsearch', 'logstash']
+node.default['packages'] = ['curl', 'apache2-utils', 'elasticsearch', 'logstash']
