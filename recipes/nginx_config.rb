@@ -13,7 +13,7 @@ end
 cookbook_file '/etc/nginx/sites-available/default' do
 	source 'nginx-default'
 	action :create
-	notifies :restart, 'service[elasticstart]', :delayed
+	notifies :restart, 'service[elasticsearch]', :delayed
 	notifies :restart, 'service[nginx]', :delayed	
 	notifies :restart, 'service[logstash]', :delayed
 	notifies :restart, 'service[kibana4]', :delayed
