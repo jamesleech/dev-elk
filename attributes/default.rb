@@ -5,4 +5,13 @@
 default['java']['install_flavor'] = 'openjdk'
 default['java']['jdk_version'] = '7'
 
-node.default['packages'] = ['curl', 'apache2-utils', 'elasticsearch', 'logstash']
+default['packages'] = [
+	'nano', 
+	'curl',
+	'smbclient', 
+	'smbfs', 
+	'apache2-utils', 
+	'elasticsearch', #todo, use the elasticsearch recipe instead of installing package.
+	'logstash']
+
+

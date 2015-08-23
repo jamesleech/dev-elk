@@ -1,0 +1,8 @@
+input {
+  file {
+    type => "csvlog"
+    path => "/var/log/TA040231/L*.LOG"
+    start_position => "beginning"
+    sincedb_path => "/dev/null"
+  }
+}
