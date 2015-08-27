@@ -24,3 +24,5 @@ include_recipe 'dev-elk::elasticsearch_config'
 include_recipe 'dev-elk::logstash_config'
 include_recipe 'dev-elk::kibana4_config'
 include_recipe 'dev-elk::nginx_config'
+
+include_recipe 'dev-elk::elasticPlugins_install'

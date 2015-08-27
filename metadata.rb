@@ -4,7 +4,7 @@ maintainer_email 'james.leech@tattsgroup.com'
 license 'all_rights'
 description 'Installs/Configures dev-elk'
 long_description 'Installs/Configures dev-elk'
-version '0.1.29'
+version '0.1.39'
 
 depends 'apt'
 depends 'packages'
