@@ -5,29 +5,44 @@
 # Copyright (c) 2015 The Authors, All Rights Reserved.
 
 #delete all existing conf.
-remote_file '/etc/logstash/conf.d/*' do
-  action :delete
+Dir[node['logstash']['conf.d'] + '*'].each do |path|
+  file ::File.expand_path(path) do
+    action :delete
+  end
 end
 
-#todo, include files based on attributes, git clone, wget....
-#see chef resource type deploy 
-# cookbook_file '/etc/logstash/conf.d/01-LSqlRF.logstash.conf' do
-#   source 'LSqlRF.logstash.conf'
-#   action :create
-# end
-
-cookbook_file '/etc/logstash/conf.d/10000-cvslog.input.logstash.conf' do
-  source 'csvlog.input.logstash.conf'
+cookbook_file node['logstash']['conf.d'] + '10000-input.csv.logstash.conf' do
+  source 'input.csv.logstash.conf'
   action :create
 end
 
-cookbook_file '/etc/logstash/conf.d/50000-cvslog.filter.logstash.conf' do
-  source 'csvlog.filter.logstash.conf'
+cookbook_file node['logstash']['conf.d'] + '20000-input.fixed.logstash.conf' do
+  source 'input.fixed.logstash.conf'
   action :create
 end
 
-cookbook_file '/etc/logstash/conf.d/99999-Elasticsearch.logstash.conf' do
-  source 'elasticsearch.output.logstash.conf'
+cookbook_file node['logstash']['conf.d'] + '50000-filter.log.logstash.conf' do
+  source 'filter.log.logstash.conf'
+  action :create
+end
+
+cookbook_file node['logstash']['conf.d'] + '50001-filter.logmessage.logstash.conf' do
+  source 'filter.logmessage.logstash.conf'
+  action :create
+end
+
+cookbook_file node['logstash']['conf.d'] + '50002-filter.webmessage.logstash.conf' do
+  source 'filter.webmessage.logstash.conf'
+  action :create
+end
+
+cookbook_file node['logstash']['conf.d'] + '80000-output.elasticsearch.logstash.conf' do
+  source 'output.elasticsearch.logstash.conf'
+  action :create
+end
+
+cookbook_file node['logstash']['conf.d'] + '90000-output.webmessage.logstash.conf' do
+  source 'output.webmessage.logstash.conf'
   action :create
 end
 

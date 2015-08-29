@@ -15,3 +15,6 @@ default['packages'] = [
 	'logstash']
 
 
+default['logstash']['conf.d'] = '/etc/logstash/conf.d/'
+
+#default[''][]'http://packages.elastic.co/elasticsearch/1.7/debian'
