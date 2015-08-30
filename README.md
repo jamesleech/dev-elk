@@ -12,8 +12,7 @@ TODO:
 
 -Configure Curator using attributes, as this is for development usage, 2 days of logs should be enough.
 
--Step Logstash to use attributes for which files load.
-
+-Setup Logstash to use attributes to load log files from the start.
 
 
 See my vagrantfile here;
