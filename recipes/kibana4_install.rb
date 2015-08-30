@@ -8,7 +8,7 @@
 
 # wget https://download.elasticsearch.org/kibana/kibana/kibana-4.1.1-linux-x64.tar.gz
 remote_file '/tmp/vagrant-cache/chef/kibana4.tar.gz' do
-  source 'https://download.elasticsearch.org/kibana/kibana/kibana-4.1.1-linux-x64.tar.gz'
+  source node['kibana']['url']
   action :create_if_missing
   not_if { ::File.exists?('/tmp/vagrant-cache/chef/kibana4.tar.gz') }
 end

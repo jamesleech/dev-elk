@@ -4,6 +4,10 @@
 #
 # Copyright (c) 2015 The Authors, All Rights Reserved.
 
+
+#create kibana users file
+
+
 #the logstash forwarder public key.
 cookbook_file '/etc/nginx/htpasswd.users' do
 	source 'htpassd.users'
