@@ -9,9 +9,10 @@ Elasticsearch, Logstash and Curator are installed from packages.
 Kibana is installed from a tar.
 
 TODO: 
-1. Configure Curator using attributes, as this is for development usage, 2 days of logs should be enough.
 
-2. Step Logstash to use attributes for which files load.
+-Configure Curator using attributes, as this is for development usage, 2 days of logs should be enough.
+
+-Step Logstash to use attributes for which files load.
 
 
 
