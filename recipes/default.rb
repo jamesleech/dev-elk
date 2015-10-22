@@ -12,7 +12,7 @@ include_recipe 'dev-elk::add-repos'
 
 #mount shares
 include_recipe 'dev-elk::mount_points'
-include_recipe 'smbfs::attribute_driven'
+#include_recipe 'smbfs::attribute_driven'
 
 #install
 include_recipe 'packages::default' #installed elasticsearch and logstash amoung other selected packages.

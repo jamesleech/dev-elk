@@ -20,7 +20,7 @@ default['repositories']['curator']['key'] = 'https://packages.elasticsearch.org/
 default['repositories']['curator']['components'] = ['stable', 'main'] 
 
 default['packages'] = [
-	'nano', 
+	'nano', 'unzip',
 	'curl',
 	'smbclient', 
 	'smbfs', 
@@ -35,3 +35,7 @@ default['kibana']['user']['username'] = 'kibanaadmin'
 default['kibana']['user']['password'] = '123' #TODO, data bag.
 
 default['logstash']['conf.d'] = '/etc/logstash/conf.d/'
+
+default['smbfs']['mounts'] = [
+	'/mnt/prod/ASLDirA01/', '/mnt/prod/ASLDirA02/', '/mnt/prod/ASLDirA03/',
+	'/mnt/prod/ASLDirE01/', '/mnt/prod/ASLDirE02/', '/mnt/prod/ASLDirE03/']
